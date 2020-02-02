@@ -1,11 +1,5 @@
-// 13_DOM_Tworzenie_nowych_elementow_3
+const button = document.querySelector('.button')
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    var button = document.querySelector(".button");
-    
-    button.addEventListener("click", function () {
-      button.parentElement.removeChild(button);
-    });
-    
-});
+button.addEventListener("click", function () {
+    this.parentElement.removeChild(button)
+})

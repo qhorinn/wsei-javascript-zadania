@@ -1,71 +1,91 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // 10_DOM_Wiecej_o_elemencie_0_1
-    let list = document.querySelectorAll('.ex5 ul li');
 
-    for (let i = 0; i < list.length; i++) {
-        if (i % 2 == 0) {
-            list[i].style.backgroundColor = 'green';
+    //zadanie z e r o 
+
+    function exZero() {
+        const _data = document.querySelectorAll('.ex5 ul li')
+        console.log(_data)
+        for (let counter = 0; counter < _data.length; counter++) {
+            if (counter % 2 == 0) {
+                _data[counter].style.backgroundColor = 'green'
+            }
+            if (counter % 5 === 0) {
+                _data[counter].classList.add('.big')
+                console.log(_data)
+            }
+            if (counter % 3 === 0) {
+                _data[counter].style.borderBottom = '3px solid'
+            }
         }
-        // 10_DOM_Wiecej_o_elemencie_0_3
-        if (i % 3 == 0) {
-            list[i].style.textDecoration = 'underline';
+        return _data
+    }
+    exZero()
+
+    //zadanie j e d e n
+
+    function exOne() {
+        const edgeLink = "https://www.microsoft.com/en-US/windows/microsoft-edge"
+        const firefoxLink = "https://www.mozilla.org/en-US/firefox/new/"
+
+        let edge = document.querySelector('.edge')
+        edge.style.backgroundImage = "url('assets/img/edge.png')"
+
+        let firefox = document.querySelector('.firefox')
+        firefox.style.backgroundImage = "url('assets/img/firefox.png')"
+
+        let chrome = document.querySelector('.chrome')
+        chrome.style.width = "100px"
+
+        chrome.parentElement.querySelector('a').innerHTML = "Chrome"
+        edge.parentElement.querySelector('a').innerHTML = "Microsoft Edge"
+        firefox.parentElement.querySelector('a').innerHTML = "Firefox"
+
+        edge.parentElement.querySelector('a').setAttribute("href", edgeLink)
+        firefox.parentElement.querySelector('a').setAttribute("href", firefoxLink)
+    }
+    exOne()
+
+    //zadanie d w a
+
+    function exTwo() {
+        const _spanName = document.querySelectorAll('.ex2 ul li span')[0]
+        const _spanColor = document.querySelectorAll('.ex2 ul li span')[1]
+        const _spanFood = document.querySelectorAll('.ex2 ul li span')[2]
+
+        _spanName.innerHTML = 'Aureliusz Wala'
+        _spanColor.innerHTML = 'Fioletowy'
+        _spanFood.innerHTML = 'Kabanos eXclusive serowy Tarczyński polecam'
+
+        return _spanName, _spanColor, _spanFood
+    }
+    exTwo()
+
+    //zadanie t r z y
+
+    function exThree() {
+        const menu = document.querySelector('.ex3 ul')
+        menu.classList.add('menu')
+
+        const menuElement = document.querySelector('.ex3 ul li')
+        Array.prototype.forEach.call(menuElement, element => {
+            element.classList.add('menuElement')
+        });
+
+        const errorClass = document.querySelector('.error')
+        Array.prototype.forEach.call(errorClass, element => {
+            element.classList.remove('error')
+        });
+    }
+    exThree();
+
+    //zadanie c z t e r y 
+
+    function exFour() {
+        let list = document.querySelectorAll('.ex4 ul li')
+        for (let index = 0; index < list.length; index++) {
+            list[index].setAttribute('data-id', index + 1)
         }
+        return list
     }
-
-    // 10_DOM_Wiecej_o_elemencie_0_2
-    list[4].classList.add('big');
-
-
-    // 10_DOM_Wiecej_o_elemencie_1
-    let chrome = document.querySelector('.chrome');
-    let edge = document.querySelector('.edge');
-    let firefox = document.querySelector('.firefox');
-
-    edge.style.backgroundImage = "url(assets/img/edge.png)";
-    firefox.style.backgroundImage = "url(assets/img/firefox.png)";
-
-    chrome.nextElementSibling.href = "chrome.com";
-    firefox.nextElementSibling.href = "firefox.com";
-    edge.nextElementSibling.href = "microsoft.com";
-
-    chrome.nextElementSibling.innerHTML = "Chrome";
-    firefox.nextElementSibling.innerHTML = "Firefox";
-    edge.nextElementSibling.innerHTML = "Edge";
-
-    chrome.style.width = "100px";
-    
-    // 10_DOM_Wiecej_o_elemencie_2
-    let name = document.getElementById('name');
-    let favColor = document.getElementById('fav_color');
-    let favDish = document.getElementById('fav_meal');
-
-    name.innerHTML = 'Ania';
-    favColor.innerHTML = 'grey';
-    favDish.innerHTML = 'dumplings';
-
-    // 10_DOM_Wiecej_o_elemencie_3
-    let ex3ul = document.querySelector('.ex3 ul');
-    ex3ul.classList.add('menu');
-
-    let ex3li = ex3ul.getElementsByTagName('li');
-    console.log(ex3li);
-
-    for (let i = 0; i < ex3li.length; i++) {
-        ex3li[i].classList.add('menuElement');
-    }
-
-    let redElements = document.getElementsByClassName('error');
-    for (let i = 0; i < redElements.length; i++) {
-        redElements[i].classList.remove('error');
-    }
-
-    // 10_DOM_Wiecej_o_elemencie_4
-    let ex4listItems = document.querySelectorAll('.ex4 ul li');
-
-    for (let i = 0; i < ex4listItems.length; i++) {
-        ex4listItems[i].setAttribute('data-id', i+1);
-
-    }
-
+    console.log(exFour())
 });

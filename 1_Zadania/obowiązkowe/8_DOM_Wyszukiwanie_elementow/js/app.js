@@ -1,51 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //zadanie 0
 
-// 8_DOM_Wyszukiwanie_elementow_0
+    var title = document.getElementsByClassName('title')[0];
 
-    var Title = document.querySelector('.title');
-    console.log(Title);
-
-    function getDataAnimation(Title) {
-        var DataAnimation = Title.getAttribute('data-animation');
-        console.log(DataAnimation);
-        return DataAnimation;
+    function getDataAnimation(element) {
+        var animation = element.getAttribute('data-animation')
+        return animation
     }
+    console.log(getDataAnimation(title))
 
-// 8_DOM_Wyszukiwanie_elementow_1
+    //zadanie 1
 
-    // 8_DOM_Wyszukiwanie_elementow_1_1
-    var Home = document.getElementById('home');
-    var Home2 = document.querySelector('#home');
-    console.log(Home);
-    console.log(Home2);
-    // 8_DOM_Wyszukiwanie_elementow_1_2
-    var ListItemWithDataDirection = document.querySelector('li[data-direction]');
-    console.log(ListItemWithDataDirection);
-    // 8_DOM_Wyszukiwanie_elementow_1_3
-    var BlockElement = document.querySelector('.block');
-    console.log(BlockElement);
+    var home_element1 = document.getElementById('home')
+    console.log(home_element1)
+    var home_element2 = document.querySelector('#home')
+    console.log(home_element2)
+    var li_element = document.querySelector('ul li[data-direction]')
+    console.log(li_element)
+    var block_element = document.querySelector('.block')
+    console.log(block_element)
 
+    //zadanie 2 
 
-// 8_DOM_Wyszukiwanie_elementow_2
+    var li_elements = document.querySelectorAll('nav li')
+    console.log(li_elements)
+    var paragraphs = document.querySelectorAll('div p')
+    console.log(paragraphs)
+    var divs = document.querySelectorAll('article div')
+    console.log(divs)
 
-    // 8_DOM_Wyszukiwanie_elementow_2_1
-    var NavigationItems = document.querySelectorAll('nav li');
-    console.log(NavigationItems);
-    // 8_DOM_Wyszukiwanie_elementow_2_2
-    var ParagraphsInsideDivs = document.querySelectorAll('div p');
-    console.log(ParagraphsInsideDivs);
-    // 8_DOM_Wyszukiwanie_elementow_2_3
-    var DivsInArticle = document.querySelectorAll('article div');
-    console.log(DivsInArticle);
+    //zadanie 3
 
-
-// 8_DOM_Wyszukiwanie_elementow_3
-
-    // 8_DOM_Wyszukiwanie_elementow_3_1
-    var TagArticleClassFirst = document.querySelector('article.first');
-    console.log(TagArticleClassFirst);
-    // 8_DOM_Wyszukiwanie_elementow_3_2
-    var TagArticleClassFirstH2 = document.querySelectorAll('article.first h2');
-    console.log(TagArticleClassFirstH2.length);
+    var tag = document.querySelector('article[class="first"]')
+    console.log(tag.querySelectorAll('h1').length)
 
 });

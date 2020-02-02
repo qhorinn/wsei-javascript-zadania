@@ -5,86 +5,83 @@ document.addEventListener("DOMContentLoaded", function () {
     var blocks = document.querySelectorAll(".block");
     var links = document.querySelector(".links").children;
 
-    // 9_DOM_Element_Zadanie_0
-    function getDatasInfor(elements) {
-        let array = [];
+    //zadanie 0 
 
-        for (let i = 0; i < elements.length; i++ ) {
-            array.push(elements[i].dataset.color);
+    function getDatasInfo(links) {
+        var retArray = []
+        for (let i = 0; i < links.length; i++) {
+            retArray.push(links[i].getAttribute('data-color'))
         }
+        return retArray
+    }
+    console.log(getDatasInfo(links))
 
-        console.log(array);
+    //zadanie 1
+
+    console.log(homeElement)
+    for (let counter = 0; counter < childElements.length; counter++) {
+        console.log(counter)
+    }
+    console.log(banner)
+
+    for (let counter = 0; counter < blocks.length; counter++) {
+        console.log(counter)
+    }
+    for (let counter = 0; counter < links.length; counter++) {
+        console.log(counter)
     }
 
-    getDatasInfor(links);
+    //zadanie 2
 
-    // 9_DOM_Element_Zadanie_1
-    console.log(homeElement);
-    console.log(childElements);
-    console.log(banner);
-    console.log(blocks);
-    console.log(links);
+    console.log(blocks.innerHTML)
+    console.log(blocks.outerHTML)
+    //innerHTML zawiera znaczniki bez div a outerHTML zawiera znaczniki z div
 
-    for (let i = 0; i < childElements.length; i++) {
-        console.log(childElements[i].tagName, childElements[i].classList);
+    blocks.innerHTML = 'Nowa wartość diva o klasie blocks'
+    console.log(blocks.innerHTML)
+    //zwraca ustawioną wartość 'Nowa wartość diva o klasie blocks'
+
+    //zadanie trzy
+
+    var footer = document.getElementById("mainFooter");
+
+    function getId(footer) {
+        return footer.getAttribute('id')
     }
+    console.log(getId(footer))
 
-    for (let i = 0; i < links.length; i++) {
-        console.log(links[i].tagName, links[i].classList);
-    }
+    //zadanie cztery
 
-    for (let i = 0; i < blocks.length; i++) {
-        console.log(blocks[i].tagName, blocks[i].classList);
-    }
-
-    // 9_DOM_Element_Zadanie_2
-    let ulBlocks = document.querySelector(".blocks");
-    ulBlocks.outerHTML = "new string instead of blocks list";
-
-    // 9_DOM_Element_Zadanie_3
-    let mainFooter = document.querySelector("#mainFooter");
-
-    function getId(element) {
-        let id = element.getAttribute('id');
-        console.log(id);
-        return id;
-    }
-    getId(mainFooter);
-
-    // 9_DOM_Element_Zadanie_4
     function getTags(elements) {
-        var array1 = [];
+        var Array1 = [];
 
-        for (let i = 0; i < elements.length; i++) {
-            array1.push(elements[i].tagName);
-        }
+        Array.prototype.forEach.call(elements, element => {
+            Array1.push(element.tagName)
+        });
 
-        return array1;
+        return Array1;
     }
+    console.log(getTags(childElements))
 
-    const test1 = getTags(ChildElements);
-    console.log(test1);
+    //zadanie pięć
 
-    // 9_DOM_Element_Zadanie_5
     function getClassInfo(element) {
-        var tab = [];
-        for ( var i = 0; i < element.classList.length; i++ ) {
-            toolbar.push(element.classList[i]);
-        }
-        return tab
+        return element.classList
     }
-    console.log(getClassInfo(banner));
+    console.log(getClassInfo(banner))
 
-    // 9_DOM_Element_Zadanie_6
-    let allLi = document.querySelectorAll("nav li");
+    //zadanie sześć
 
-    function setDataDirection(elements) {
-        for ( let i = 0; i < elements.length; i++) {
-            if ( elements[i].getAttribute["data-direction"] !== "top") {
-                elements[i].setAttribute("data-direction, top");
+    function setDataDirection(_elements) {
+        for (let i = 0; i < _elements.length; i++) {
+            console.log(_elements[1].dataset.direction)
+            if (!_elements[i].dataset.direction !== 'top') {
+                _elements[i].dataset.direction = 'top'
             }
         }
     }
-    setDataDirection(allLi);
+    const el = document.querySelectorAll('nav ul li')
+    console.log(setDataDirection(el))
+
 
 });

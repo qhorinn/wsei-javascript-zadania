@@ -1,15 +1,12 @@
-// Zadanie 1_Funkcje_czasu
-
 function countHello(number) {
-    
-        var counter = 1;
-    
-        var interval = setInterval(()=>{
-            console.log("Hello", counter++);
-            if (counter > number) {
-                clearInterval(interval);
-            }
-        },500)
-    }
-    
-    countHello(5);
+    var count = 0;
+    var intervalID = setInterval(() => {
+        count++;
+        console.log('Hello', count);
+        if (count === number) {
+            clearInterval(intervalID);
+        }
+    }, 500);
+}
+
+countHello(5)

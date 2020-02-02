@@ -1,24 +1,23 @@
-// 11_DOM_Eventy_0a
-let parents = document.querySelectorAll('.parent');
+//zadanie zero a
 
-for(let i = 0; i < parents.length; i++) {
-    parents[i].addEventListener('mouseover', function() {
-        this.children[0].style.display = 'block';
-    }) 
-    parents[i].addEventListener('mouseleave', function() {
-        this.children[0].style.display = 'none';
-    }) 
+const parent = document.querySelectorAll('.parent')
+console.log(parent)
+
+for (let i = 0; i < parent.length; i++) {
+    parent[i].addEventListener("mouseover", function () {
+        this.querySelector('.children').style.display = "block"
+    })
 }
 
-// 11_DOM_Eventy_0b
-for (var j = 0; j < parents.length; j++) {
-    parents[j].addEventListener("mouseout", function() {
-        var parent = this;
+//zadanie zero b
 
-        function hideChildrenElement(parent){
-            parent.querySelector('.children').style.display = 'none';
+for (let j = 0; j < parent.length; j++) {
+    parent[j].addEventListener("mouseout", function () {
+        var parent = this
+
+        function hideChildrenElement(parent) {
+            parent.querySelector('.children').style.display = "none"
         }
-
-        hideChildrenElement(parent);
-    });
+        hideChildrenElement(parent)
+    })
 }

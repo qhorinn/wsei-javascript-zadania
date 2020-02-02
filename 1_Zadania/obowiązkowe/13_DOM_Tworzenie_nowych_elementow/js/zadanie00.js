@@ -1,13 +1,10 @@
-// 13_DOM_Tworzenie_nowych_elementow_0
+const deleteButton = document.querySelectorAll('.deleteBtn')
 
-document.addEventListener('DOMContentLoaded', function () {
+deleteButton.forEach(button => {
+    button.addEventListener("click", function () {
+        let _parent = this.parentElement.parentElement
+        let table = _parent.parentElement
 
-    var deleteItem = document.querySelectorAll(".deleteBtn");
-    
-    for ( var i = 0; i < deleteItem.length; i++ ) {
-      deleteItem[i].addEventListener( "click", function() {
-      this.parentElement.parentElement.remove();
-        });
-    }
-    
+        table.removeChild(_parent)
+    })
 });

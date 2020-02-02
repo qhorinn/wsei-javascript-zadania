@@ -1,18 +1,15 @@
-// wywołanie funkcji - działa poprawnie, mimo tego, że jest przed zdefiniowaną funkcją, 
-// ponieważ podczas kompilacji kodu funkcje wskakują na samą góre
-Hello();
-
-function Hello() {
-    console.log("Cześć");
+Hi()
+function Hi(){
+  console.log("Cześć")
 }
+Hi()
 
-// wywołanie funkcji - działa poprawnie bo jest po zdefiniowanej funkcji
-Hello();
+//funkcja wykonuje się poprawnie zarówno przed jak i po deklaracji funkcji
 
-Hello2();
+Hello()
+var Hello = function(){ 
+  console.log("Witaj")
+}
+Hello()
 
-var Hello2 = function() {
-   console.log("Witaj");
-};
-
-Hello2();
+//funkcja wykonuje się tylko po deklaracji zmiennej, przed deklaracją wyskakuje błąd (ponieważ nie jest widoczna powyżej deklaracji)

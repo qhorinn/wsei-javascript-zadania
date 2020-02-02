@@ -1,19 +1,12 @@
-// 14_DOM_Inputy_i_formularze_1
+const invoice = document.querySelector('#invoice')
+const invoiceData = document.querySelector('#invoiceData')
 
-document.addEventListener('DOMContentLoaded', function () {
+invoiceData.style.display = 'none'
 
-    var checkbox = document.getElementById("invoice");
-    checkbox.addEventListener('click', clickButton);
-
-    var form = document.getElementById("invoiceData");
-    form.style.display = "none";
-
-    function clickButton(event) {
-        if (form.style.display == "none") {
-            form.style.display = "";
-        } else {
-            form.style.display = "none"
-        }
+invoice.addEventListener("change", function () {
+    if (invoice.checked) {
+        invoiceData.style.display = 'block'
+    } else {
+        invoiceData.style.display = 'none'
     }
-
-});
+})

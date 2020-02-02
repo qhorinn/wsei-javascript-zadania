@@ -1,16 +1,9 @@
-// 13_DOM_Tworzenie_nowych_elementow_1
+const menu = document.querySelector('.menu')
+const button = document.querySelector('.button')
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    var button = document.querySelector(".button");
-    var ul = document.querySelector("ul");
-    counter = 1;
-    
-    button.addEventListener("click", function () {
-        var newLi = document.createElement("li");
-        newLi.innerText = counter++;
-        
-        ul.appendChild(newLi);
-    });
-    
-});
+button.addEventListener("click", function () {
+    let itemCounter = menu.children.length
+    let li = document.createElement("li")
+    li.innerHTML = `Element ${itemCounter + 1} - w chwili dodania było ${itemCounter} elementów`
+    menu.appendChild(li)
+})

@@ -15,23 +15,17 @@ callOtherFunction(function (a, b) {
 callOtherFunction(function (a, b) {
     console.log("Pierwsza liczba:", a);
     console.log("Druga liczba", b)
-    console.log("Wynik dzielenia", a / b)
+    console.log("Wynik", a * b)
 })
 
 callOtherFunction(function (a, b) {
     console.log("Pierwsza liczba:", a);
     console.log("Druga liczba", b)
-    console.log("Wynik mnożenia", a * b)
+    console.log("Wynik", a - b)
 })
 
 callOtherFunction(function (a, b) {
     console.log("Pierwsza liczba:", a);
     console.log("Druga liczba", b)
-    if (a > b) {
-        console.log("Liczba " + a + " jest większa od liczby " + b);
-    } else if (b > a) {
-        console.log("Liczba " + a + " jest mniejsza od liczby " + b);
-    } else {
-        console.log("Liczby są sobie równe");
-    }
+    console.log("Wynik", a / b)
 })

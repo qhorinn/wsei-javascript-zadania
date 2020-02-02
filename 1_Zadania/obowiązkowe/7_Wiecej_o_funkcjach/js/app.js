@@ -5,28 +5,29 @@
  */
 
 
-// tworzymy funkcje jeden - scope jeden
+//deklaracja funkcji `jeden()` 
 function jeden() {
 
-    // tworzymy zmienną zmienna1 w funkcji jeden
+    //deklaracja zmiennej `zmienna1` - dostępna w obu funkcjach - funkcja `jeden()` jest nadrzędna do funkcji `dwa()`
     var zmienna1 = 1;
 
-    // tworzymy kolejną funkcje - dwa - i kolejny scope dwa
+    //deklaracja funkcji `dwa()` - funkcja jest zagnieżdżona w funkcji `jeden()` - wszystkie zmienne utworzone w funckji `jeden()` będą dostępne w obu funkcjach
     function dwa() {
 
-        // w tej funkcji dwa nie ma zmiennej jeden więc szukamy wyżej w scope jeden czy ją znajdziemy i znajdujemy
+        //wywołanie w konsoli zmiennej `zmienna1` - dostępna ponieważ została zainicjowana w funkcji nadrzędnej
         console.log(zmienna1);
 
-        // tworzymy zmienna2 w funkcji dwa - jej scope to scope dwa
+        //deklaracja zmiennej `zmienna2` - dostępna tylko w funkcji zagnieżdżonej `dwa()`
         var zmienna2 = 3;
     }
 
-    // wywolujemy funkcje dwa
+    //wywołanie funkcji zagnieżdżonej `dwa()`
     dwa();
 
-    // VM338:21 Uncaught ReferenceError: zmienna2 is not defined - otrzymujemy taki bład poniewaz zmienna2  jest w srodku funkcji dwa i nie mamy do niej dostepu
+    //wywołanie w konsoli zmiennej `zmienna2` - niedostępna ponieważ zainicjowana w funkcji zagnieżdżonej `dwa()`
     console.log(zmienna2)
 }
 
-// wywołanie funkcji jeden
+//wywołanie funkcji zagnieżdżonej `jeden()`
 jeden()
+

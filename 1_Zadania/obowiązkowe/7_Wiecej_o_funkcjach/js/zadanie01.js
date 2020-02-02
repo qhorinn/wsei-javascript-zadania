@@ -5,21 +5,21 @@
  * Napisz komentarze dla kazdej z linijek kodu
  */
 
-// tworzymy funkcję sortArray, która nie przyjmuje parametrów
+//deklaracja funkcji 'sortArray()'
 function sortArray() {
 
-    // tworzymy tablicę points z liczbami
+    //deklaracja tablicy 'points'
     var points = [41, 3, 6, 1, 114, 54, 64];
 
-    // tworzymy funkcję sortującą dla tablicy
+    //funkcja 'sort()' sortuje tablice 'points'
     points.sort(function (a, b) {
-        // zależne od tego czy wynik jest dodatni, czy ujemy, czy równy zeru wartości są umieszczane w odpowiednich miejscach
+        //funkcja odejmuje 'b' od 'a'
         return a - b;
     });
 
-    // zwracamy posortowaną tablicę
+    //funkcja zwraca posortowaną tablice 'points'
     return points;
 }
 
-// wywołujemy funkcję sortArray
+//wywołanie funkcji 'sortArray()'
 sortArray();

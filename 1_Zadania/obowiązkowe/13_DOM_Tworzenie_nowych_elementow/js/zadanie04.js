@@ -1,14 +1,8 @@
-// 13_DOM_Tworzenie_nowych_elementow_4
+const button = document.querySelector('#remove')
+const list = document.querySelector('.list')
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    var button = document.querySelector(".button");
-    var ul = document.querySelector(".list");
-    
-    button.addEventListener("click", function() {
-      if (ul.hasChildNodes()) {
-        ul.removeChild(ul.lastElementChild);
-        };
+button.addEventListener("click", function () {
+    list.forEach(element => {
+        element.parentElement.removeChild(element)
     });
-    
-});
+})

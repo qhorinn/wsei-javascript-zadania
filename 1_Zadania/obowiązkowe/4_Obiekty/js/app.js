@@ -1,69 +1,63 @@
-// 4_Obiekty_0a
-let city = {
-    capital: "Sopot",
-    population: 30000,
-    president: "Kowalski Jerzy",
-    primeMinisters: ["Kuba", "Maciek", "Adam"],
-}
+//zadanie 0a
+var city = {
+    capital: String,
+    population: Number,
+    president: String,
+    primeMinisters: String = []
+};
+console.log(city)
 
-console.log(
-    city.capital,
-    city.population,
-    city.president,
-    city.primeMinisters
-);
-
-// 4_Obiekty_0b
-let timeMachine = {
-    shape: "circle",
-    model: "6543",
-    run: function run(date, place) {
-        console.log("You moved to:", date, place);
+//zadanie 0b
+var timeMachine = {
+    shape: 'rectangle',
+    model: 'new',
+    run: function (date, place) {
+        console.log(date + " " + place)
     }
 }
+for (let atributes in timeMachine) {
+    console.log(timeMachine[atributes])
+}
+timeMachine.run("1986-04-26", "Chernobyl")
 
-console.log(timeMachine.shape);
-console.log(timeMachine.model);
-console.log(timeMachine.run('3 luty 1870', 'Malaga'));
-
-// 4_Obiekty_1
-var book = {
-    title: "Lalka",
-    author: "Bolek Prus",
-    numberOfPages: 377,
+//zadanie 1
+const book = {
+    title: "The Lord of the Rings",
+    author: "J. R. R. Tolkien",
+    numberOfPages: 1345
+}
+for (let atributes in book) {
+    console.log(book[atributes])
 }
 
-console.log(book.title);
-console.log(book.author);
-console.log(book.numberOfPages);
-
-// 4_Obiekty_2
+//zadanie 2
 const person = {
-    name: "Jon",
-    age: 23,
-    sayHello: function() {
-        console.log("Hello");
+    name: "Aureliusz",
+    age: 22,
+    sayHello: function () {
+        console.log('Hello')
     }
 }
-
-console.log(person.name, person.age);
-person.sayHello();
-
-// 4_Obiekty_3
-var cookbook = {
-    title: "Gordon Ramsey",
-    serving: 20
+for (let atributes in person) {
+    console.log(person[atributes])
 }
-cookbook.ingriedients = ["apple", "sugar"];
+person.sayHello()
 
-console.log(cookbook);
+//zadanie 3 
+const recipe = {
+    title: "Jajecznica z boczkiem i pomidorem",
+    servings: 2
+}
+recipe.ingredients = ['6 jajek', '200g boczku', '1 pomidor']
+for (let atributes in recipe) {
+    console.log(recipe[atributes])
+}
 
-// 4_Obiekty_6
+//zadanie 6 
 var spoon = {
     isExist: true
 }
 
 var fork = spoon;
-fork.isExist  = false;
-
-console.log(isExist);
+fork.isExist = false;
+//łyżka nie isnieje - wlasciwosc fork przechodzi na spoon

@@ -1,30 +1,16 @@
-// 13_DOM_Tworzenie_nowych_elementow_2
-  
-document.addEventListener('DOMContentLoaded', function () {
+const orders = document.querySelector('.orders')
+const id = document.querySelector('#orderId')
+const item = document.querySelector('#item')
+const quantity = document.querySelector('#quantity')
+const button = document.querySelector('.button')
 
-    var button = document.querySelector(".button");
-    var orderId = document.querySelector("#orderId");
-    var item = document.querySelector("#item");
-    var quantity = document.querySelector("#quantity");
-    
-    button.addEventListener( "click", function() {
-      var newTr = document.createElement("tr");
+button.addEventListener("click", function () {
+    let tr = document.querySelector('tr')
+    let navtr = tr.cloneNode(true)
 
-      var tbody = document.querySelector("tbody");
-      tbody.appendChild(newTr);
+    orders.appendChild(navtr)
 
-      var newTd = document.createElement("td");
-      newTr.appendChild(newTd);
-    
-      var newTd2 = document.createElement("td");
-      newTr.appendChild(newTd2);
-    
-      var newTd3 = document.createElement("td");
-      newTr.appendChild(newTd3);
-    
-      newTd.innerHTML = orderId.value;
-      newTd2.innerHTML = item.value;
-      newTd3.innerHTML = quantity.value;
-    });
-    
-});
+    orders.children[0].innerHTML = id.value
+    orders.children[1].innerHTML = item.value
+    orders.children[2].innerHTML = quantity.value
+})

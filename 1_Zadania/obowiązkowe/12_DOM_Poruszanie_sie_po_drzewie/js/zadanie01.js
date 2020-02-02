@@ -1,11 +1,10 @@
-// 12_DOM_Poruszanie_sie_po_drzewie_1
+const buttons = document.querySelectorAll('.button')
 
-var buttons = document.getElementsByClassName("button");
-
-function clickListener1() {
-  this.nextElementSibling.classList.toggle('hidden');
-}
-
-for( var i = 0; i < buttons.length; i++ ) {
-  buttons[i].addEventListener( "click", clickListener1 );
+for (let counter = 0; counter < buttons.length; counter++) {
+    buttons[counter].addEventListener("click", function () {
+        let nextElement = this.nextElementSibling
+        if (nextElement !== null) {
+            nextElement.classList.toggle("hidden")
+        }
+    })
 }
