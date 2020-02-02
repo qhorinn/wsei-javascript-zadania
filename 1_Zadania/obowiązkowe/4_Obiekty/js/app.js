@@ -1,74 +1,64 @@
-// Zadanie 0a
-
-const city = {
-    capital: "Wrszawa",
-    poopulation: 2000000,
-    president: "Trzaskowski",
-    primeMinister: ["Adam", "Bogdan"]
-};
-
-console.log(city.capital + city.poopulation + city.president + city.primeMinister)
-
-//Zadanie 0b
-
-const timeMachine = {
-    shape: "Portal",
-    model: "",
-    run: function(date, place){
-        console.log(`Przeniosłeś się ${place} i jest obecnie ${date}`);
-    }
-};
-
-timeMachine.run("20-11-2030", "Sydney");
-
-//Zadanie 1
-
-const book = {
-    title: `test`,
-    author: `author`,
-    numberOfPages: `number`
-};
-
-for(const key of book){
-    console.log(book[key]);
+// 4_Obiekty_0a
+let city = {
+    capital: "Sopot",
+    population: 30000,
+    president: "Kowalski Jerzy",
+    primeMinisters: ["Kuba", "Maciek", "Adam"],
 }
 
-//Zadanie 2
+console.log(
+    city.capital,
+    city.population,
+    city.president,
+    city.primeMinisters
+);
 
-var person = {
-    name: `Andrzej`,
-    age 12,
-    sayHello: function(){
-        console.log("hello");
+// 4_Obiekty_0b
+let timeMachine = {
+    shape: "circle",
+    model: "6543",
+    run: function run(date, place) {
+        console.log("You moved to:", date, place);
     }
 }
-console.log(person.name);
-console.log(person.age);
+
+console.log(timeMachine.shape);
+console.log(timeMachine.model);
+console.log(timeMachine.run('3 luty 1870', 'Malaga'));
+
+// 4_Obiekty_1
+var book = {
+    title: "Lalka",
+    author: "Bolek Prus",
+    numberOfPages: 377,
+}
+
+console.log(book.title);
+console.log(book.author);
+console.log(book.numberOfPages);
+
+// 4_Obiekty_2
+const person = {
+    name: "Jon",
+    age: 23,
+    sayHello: function() {
+        console.log("Hello");
+    }
+}
+
+console.log(person.name, person.age);
 person.sayHello();
 
-//Zadanie 3
-
-const recipe = {
-    title: `przepis`,
-    servings: 0,
-
+// 4_Obiekty_3
+var cookbook = {
+    title: "Gordon Ramsey",
+    serving: 20
 }
+cookbook.ingriedients = ["apple", "sugar"];
 
-recipe.ingredients = [];
-recipe.addIngredient = function(ingredient){
-    this.ingredient.push(ingredient);
-    this.servings++;
-}
+console.log(cookbook);
 
-recipe.addIngredient(`składnik 1`);
-recipe.addIngredient(`składnik 2`);
-
-console.log(recipe.title);
-console.log(recipe.servings);
-console.log(recipe.ingredient);
-
-//Zadanie 6
-
+// 4_Obiekty_6
 var spoon = {
     isExist: true
 }
@@ -76,4 +66,4 @@ var spoon = {
 var fork = spoon;
 fork.isExist  = false;
 
-const.log(spoon.isExist);
+console.log(isExist);

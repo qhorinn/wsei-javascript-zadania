@@ -1,9 +1,15 @@
-function countHello(number){
-    var number2 = 1;
-    const interval = setInterval(function(){
-        console.log('Hello ', number2++);
-        if(number2 == number+1)clearInterval(interval);
-    },1000);
-}
+// Zadanie 1_Funkcje_czasu
 
-countHello(10);
+function countHello(number) {
+    
+        var counter = 1;
+    
+        var interval = setInterval(()=>{
+            console.log("Hello", counter++);
+            if (counter > number) {
+                clearInterval(interval);
+            }
+        },500)
+    }
+    
+    countHello(5);

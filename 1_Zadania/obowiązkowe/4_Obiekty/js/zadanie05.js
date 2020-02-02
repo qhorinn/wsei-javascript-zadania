@@ -32,8 +32,8 @@ var animals = [
 
 ]
 
-for (let index = 0; index < animals.length; index++){
-    for(const key in animals[index]){
-        console.log(animals[index][key]);
+for (i = 0; i < animals.length; i++) {
+    for(let j in animals[i]) {
+        console.log(animals[i][j]);
     }
 }

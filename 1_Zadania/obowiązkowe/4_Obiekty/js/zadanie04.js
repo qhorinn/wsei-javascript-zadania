@@ -10,6 +10,6 @@ var movie = {
     category: " Adventure, Drama, Fantasy"
 }
 
-for (const show in movie){
-    console.log(movie[show]);
-}
+  for (let i in movie) {
+    console.log(movie[i]);
+  }
